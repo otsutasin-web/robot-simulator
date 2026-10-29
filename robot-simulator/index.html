@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Robot Simulation - Chirality Only</title>
+<link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<main>
+  <h1>Robot Simulation — Chirality Only</h1>
+  <p>通常モードではクリックでペアを追加します。配置変更モードではShort状態のペアを選び、片方を隣接点に移してLong状態にできます。</p>
+  <section class="panel">
+    <div class="controls">
+      <button id="start">再生</button>
+      <button id="pause" class="secondary">一時停止</button>
+      <button id="step" class="secondary">1ステップ進める</button>
+      <button id="edit" class="secondary" aria-pressed="false">配置変更モード：OFF</button>
+      <button id="reset" class="secondary">リセット</button>
+      <span class="stats" id="stats">0ペア / 0台 · 0ステップ</span>
+    </div>
+    <p id="guide" class="note">通常モード：格子点をクリックするとペアを追加します。</p>
+    <div class="canvas-wrap"><canvas id="board" width="800" height="800"></canvas></div>
+    <p class="note">1ステップは全ロボットが移動前の状態をLook・Computeし、その後Moveを終えるまでです。移動判定と同一ペアの同時移動抑制はJava版のままです。リセットで全ロボットを削除します。</p>
+  </section>
+</main>
+<script type="module" src="./main.js"></script>
+</body>
+</html>
